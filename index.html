@@ -370,13 +370,9 @@
         height: 40vh;
         float: none;
         z-index: 10;
-        overflow: hidden;
       }
 
       #map {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100% !important;
         height: 100% !important;
       }
@@ -810,7 +806,7 @@
 
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v12',
+      style: 'mapbox://styles/mapbox/light-v11',
       center: [-87.2620, 41.6100],
       zoom: 13,
       pitch: 30,
