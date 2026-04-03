@@ -361,7 +361,7 @@
       .intro { padding: 3rem 1.5rem; }
       .intro p { font-size: 1rem; }
 
-      .scroll-container { display: flex; flex-direction: column; }
+      .scroll-container { display: block; }
 
       #map-sticky {
         position: sticky;
@@ -370,6 +370,15 @@
         height: 40vh;
         float: none;
         z-index: 10;
+        overflow: hidden;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
       }
 
       .map-overlay {
@@ -810,6 +819,10 @@
     });
 
     map.addControl(new mapboxgl.AttributionControl({ compact: true }));
+
+    map.on('style.load', () => {
+      map.resize();
+    });
 
     map.on('load', () => {
       stops.forEach((stop, i) => {
