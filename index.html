@@ -352,74 +352,17 @@
     .mapboxgl-popup-content p { font-size: 0.8rem; color: var(--text-light); }
 
     @media (max-width: 768px) {
-
       .hero h1 { font-size: clamp(2rem, 10vw, 3rem); }
       .hero-subtitle { font-size: 0.95rem; padding: 0 1rem; }
       .hero-meta { gap: 1.25rem; }
       .hero-meta-number { font-size: 1.4rem; }
-
       .intro { padding: 3rem 1.5rem; }
       .intro p { font-size: 1rem; }
-
-      .scroll-container { display: block; }
-
-      #map-sticky {
-        position: sticky;
-        top: 0;
-        width: 100%;
-        height: 40vh;
-        float: none;
-        z-index: 10;
-      }
-
-      #map {
-        width: 100% !important;
-        height: 100% !important;
-      }
-
-      .map-overlay {
-        top: 0.75rem;
-        left: 0.75rem;
-        padding: 0.6rem 0.85rem;
-        max-width: 160px;
-      }
-
-      .map-overlay-title { font-size: 0.8rem; }
-      .map-overlay-stop { font-size: 0.65rem; }
-
-      .story-panels {
-        margin-left: 0;
-        padding: 0 1.25rem;
-        background: var(--white);
-        position: relative;
-        z-index: 1;
-      }
-
-      .story-spacer { height: 2rem; }
-
-      .story-panel {
-        min-height: auto;
-        padding: 2.5rem 0;
-        opacity: 1;
-        border-bottom: 1px solid var(--sand-dark);
-      }
-
-      .story-panel:last-of-type { border-bottom: none; }
-
+      #map-sticky { position: relative; width: 100%; height: 45vh; float: none; }
+      .story-panels { margin-left: 0; padding: 0 1.5rem; }
+      .story-panel { min-height: auto; padding: 2.5rem 0; opacity: 1; border-bottom: 1px solid var(--sand-dark); }
       .stop-title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
-
-      .notable-person { padding: 0.6rem 0.85rem; }
-
-      .stop-description { font-size: 0.95rem; }
-
       .closing { padding: 4rem 1.5rem; }
-      .closing h2 { font-size: clamp(1.6rem, 7vw, 2.5rem); }
-    }
-
-    @media (max-width: 380px) {
-      #map-sticky { height: 35vh; }
-      .hero h1 { font-size: 2rem; }
-      .hero-meta { flex-wrap: wrap; justify-content: center; }
     }
   </style>
 </head>
@@ -477,7 +420,6 @@
     <div class="story-panels" id="story-panels">
       <div class="story-spacer"></div>
 
-      <!-- STOP 1 -->
       <div class="story-panel" data-stop="0">
         <div class="stop-number">Stop 01 · Trail Start</div>
         <div class="stop-title">South Shore Miller Station</div>
@@ -495,7 +437,6 @@
         </div>
       </div>
 
-      <!-- STOP 2 -->
       <div class="story-panel" data-stop="1">
         <div class="stop-number">Stop 02 · Business District</div>
         <div class="stop-title">6th Avenue & The Swedish Settlement</div>
@@ -512,7 +453,6 @@
         </div>
       </div>
 
-      <!-- STOP 3 -->
       <div class="story-panel" data-stop="2">
         <div class="stop-number">Stop 03 · National Park Gateway</div>
         <div class="stop-title">Douglas Nature Center</div>
@@ -530,7 +470,6 @@
         </div>
       </div>
 
-      <!-- STOP 4 -->
       <div class="story-panel" data-stop="3">
         <div class="stop-number">Stop 04 · Lake Street Beach</div>
         <div class="stop-title">Drusilla Carr's Land</div>
@@ -548,7 +487,6 @@
         </div>
       </div>
 
-      <!-- STOP 5 -->
       <div class="story-panel" data-stop="4">
         <div class="stop-number">Stop 05 · Chanute Trail</div>
         <div class="stop-title">Where Flight Was Invented</div>
@@ -566,7 +504,6 @@
         </div>
       </div>
 
-      <!-- STOP 6 — was 7: Willa Brown -->
       <div class="story-panel" data-stop="5">
         <div class="stop-number">Stop 06 · Interpretive Sign</div>
         <div class="stop-title">Willa Brown — Innovator</div>
@@ -577,14 +514,13 @@
             <div class="notable-role">First Black woman with a commercial pilot's license in the US</div>
           </div>
         </div>
-        <p class="stop-description">Willa Brown was not just a pilot — she was an innovator who built an entire training program. As a Tuskegee Trainer during WWII, she helped shape the generation of Black aviators who would prove themselves over Europe and the Pacific. She was also a Gary Public Schools teacher — her impact rippling from the classroom to the skies. This sign marks the place where her story is told.</p>
+        <p class="stop-description">Willa Brown was not just a pilot — she was an innovator who built an entire training program. As a Tuskegee Trainer during WWII, she helped shape the generation of Black aviators who would prove themselves over Europe and the Pacific. She was also a Gary Public Schools teacher — her impact rippling from the classroom to the skies.</p>
         <div class="stop-tags">
           <span class="tag tag-black">✊ Black History</span>
           <span class="tag tag-women">⭐ Women's History</span>
         </div>
       </div>
 
-      <!-- STOP 7 — was 8: Octave Chanute Memorial -->
       <div class="story-panel" data-stop="6">
         <div class="stop-number">Stop 07 · Historic Landmark</div>
         <div class="stop-title">Octave Chanute Memorial & Gary Bath House</div>
@@ -602,7 +538,6 @@
         </div>
       </div>
 
-      <!-- STOP 8 — was 10: Tuskegee Airmen Memorial -->
       <div class="story-panel" data-stop="7">
         <div class="stop-number">Stop 08 · Memorial</div>
         <div class="stop-title">Tuskegee Airmen Memorial</div>
@@ -613,7 +548,7 @@
             <div class="notable-role">Tuskegee Airman, principal — and the woman who trained them</div>
           </div>
         </div>
-        <p class="stop-description">Quentin B. Smith served as both a Tuskegee Airman and as a Gary Public Schools principal — a life of service in the air and on the ground. Willa Brown, the first Black woman to earn a commercial pilot's license, was a Tuskegee trainer and Gary teacher. The memorial honors their service and the long relationship between Miller Beach, aviation, and Black excellence that stretches back to Octave Chanute's experiments on these same dunes.</p>
+        <p class="stop-description">Quentin B. Smith served as both a Tuskegee Airman and as a Gary Public Schools principal — a life of service in the air and on the ground. Willa Brown, the first Black woman to earn a commercial pilot's license, was a Tuskegee trainer and Gary teacher. The memorial honors their service and the long relationship between Miller Beach, aviation, and Black excellence.</p>
         <div class="stop-tags">
           <span class="tag tag-black">✊ Black History</span>
           <span class="tag tag-women">⭐ Women's History</span>
@@ -621,7 +556,6 @@
         </div>
       </div>
 
-      <!-- STOP 9 — was 9: Marquette Park Area 5 -->
       <div class="story-panel" data-stop="8">
         <div class="stop-number">Stop 09 · Marquette Park</div>
         <div class="stop-title">The Fight for the Beach</div>
@@ -638,7 +572,6 @@
         </div>
       </div>
 
-      <!-- STOP 10 — was 12: Indigenous Peoples Sacred Site -->
       <div class="story-panel" data-stop="9">
         <div class="stop-number">Stop 10 · Sacred Ground</div>
         <div class="stop-title">Indigenous Peoples Sacred Site</div>
@@ -649,13 +582,12 @@
             <div class="notable-role">Owners of all Miller Beach until the Indian Removal Act, 1830s</div>
           </div>
         </div>
-        <p class="stop-description">The southernmost point of Lake Michigan was a sacred gathering place for Indigenous nations — people came here from across the region to trade and join in ceremonies. The historic gates flanking this point were built by the Civilian Conservation Corps after the Great Depression. The Grand Calumet River once flowed freely to Lake Michigan here. The Potawatomi owned all of Miller until they were forcibly removed.</p>
+        <p class="stop-description">The southernmost point of Lake Michigan was a sacred gathering place for Indigenous nations — people came here from across the region to trade and join in ceremonies. The historic gates flanking this point were built by the Civilian Conservation Corps after the Great Depression. The Potawatomi owned all of Miller until they were forcibly removed.</p>
         <div class="stop-tags">
           <span class="tag tag-native">🌿 Native History</span>
         </div>
       </div>
 
-      <!-- STOP 11 — was 11: Bethel Lutheran Cemetery -->
       <div class="story-panel" data-stop="10">
         <div class="stop-number">Stop 11 · Cemetery</div>
         <div class="stop-title">Bethel Lutheran Cemetery</div>
@@ -666,14 +598,13 @@
             <div class="notable-role">Early Pottawatomie People and Swedish settlers rest here together</div>
           </div>
         </div>
-        <p class="stop-description">The oldest Lutheran church in Lake County — built in 1894 for a growing Swedish immigrant community — holds this cemetery where Drusilla Carr is buried alongside early Potawatomi people and victims of the Aetna Powder Plant explosion. A final resting place where the layers of Miller Beach's history lie side by side: the Indigenous, the immigrant, the freed, the fallen.</p>
+        <p class="stop-description">The oldest Lutheran church in Lake County — built in 1894 for a growing Swedish immigrant community — holds this cemetery where Drusilla Carr is buried alongside early Potawatomi people and victims of the Aetna Powder Plant explosion. A final resting place where the layers of Miller Beach's history lie side by side.</p>
         <div class="stop-tags">
           <span class="tag tag-native">🌿 Native History</span>
           <span class="tag tag-women">⭐ Women's History</span>
         </div>
       </div>
 
-      <!-- STOP 12 — was 13: Father Marquette Memorial -->
       <div class="story-panel" data-stop="11">
         <div class="stop-number">Stop 12 · Memorial</div>
         <div class="stop-title">Father Marquette Memorial</div>
@@ -684,14 +615,13 @@
             <div class="notable-role">French explorer, 1675 — guided by Miami people around the Great Lakes</div>
           </div>
         </div>
-        <p class="stop-description">French explorer Father Marquette, sent by Louis XIV, camped at the mouth of the Grand Calumet River in what is now Marquette Park in 1675 — before he left for Michigan where he passed away. He traveled with 4 Miami guides throughout the Great Lakes region. The river he camped beside once connected directly to Lake Michigan here, at the continent's crossroads.</p>
+        <p class="stop-description">French explorer Father Marquette, sent by Louis XIV, camped at the mouth of the Grand Calumet River in what is now Marquette Park in 1675 — before he left for Michigan where he passed away. He traveled with 4 Miami guides throughout the Great Lakes region. The river he camped beside once connected directly to Lake Michigan here.</p>
         <div class="stop-tags">
           <span class="tag tag-native">🌿 Native History</span>
           <span class="tag tag-nature">⛵ Exploration</span>
         </div>
       </div>
 
-      <!-- STOP 13 — was 16: Marquette Pavilion -->
       <div class="story-panel" data-stop="12">
         <div class="stop-number">Stop 13 · Historic Venue</div>
         <div class="stop-title">Marquette Pavilion</div>
@@ -702,13 +632,12 @@
             <div class="notable-role">Donated to Gary — and the community that fought to keep it public</div>
           </div>
         </div>
-        <p class="stop-description">The grand Marquette Pavilion was donated by US Steel at the park's inception. The park and buildings were gifted to the City of Gary in exchange for the Grand Calumet River being piped underground to make land for the steel plant. Recently restored, its grand ballroom, outdoor patio, and dance pavilion are now available for events — a place of contradictions, beauty, and history.</p>
+        <p class="stop-description">The grand Marquette Pavilion was donated by US Steel at the park's inception. The park and buildings were gifted to the City of Gary in exchange for the Grand Calumet River being piped underground to make land for the steel plant. Recently restored, its grand ballroom, outdoor patio, and dance pavilion are now available for events.</p>
         <div class="stop-tags">
           <span class="tag tag-nature">🏛 Architecture</span>
         </div>
       </div>
 
-      <!-- STOP 14 — was 6: Nelson Algren's Cottage -->
       <div class="story-panel" data-stop="13">
         <div class="stop-number">Stop 14 · Literary Landmark</div>
         <div class="stop-title">Nelson Algren's Cottage</div>
@@ -726,7 +655,6 @@
         </div>
       </div>
 
-      <!-- STOP 15 — was 14: Grand Blvd Greenway Ramp -->
       <div class="story-panel" data-stop="14">
         <div class="stop-number">Stop 15 · Greenway</div>
         <div class="stop-title">Grand Boulevard & the Sand Railroad</div>
@@ -737,13 +665,12 @@
             <div class="notable-role">How Indiana's dunes were mined to build America's industry</div>
           </div>
         </div>
-        <p class="stop-description">This former railroad line served a remarkable and largely unknown purpose — it transported mined sand from the Lake Michigan coastal dunes to important Indiana companies like Ball Glass, whose jars became iconic American objects. Entire dunes were torn down and moved by rail. The ramp from Grand Boulevard to the Marquette Greenway follows this former industrial corridor, now reclaimed as a trail.</p>
+        <p class="stop-description">This former railroad line transported mined sand from the Lake Michigan coastal dunes to important Indiana companies like Ball Glass, whose jars became iconic American objects. Entire dunes were torn down and moved by rail. The ramp from Grand Boulevard to the Marquette Greenway follows this former industrial corridor, now reclaimed as a trail.</p>
         <div class="stop-tags">
           <span class="tag tag-nature">🏭 Industrial History</span>
         </div>
       </div>
 
-      <!-- STOP 16 — was 15: Town of Miller Town Hall -->
       <div class="story-panel" data-stop="15">
         <div class="stop-number">Stop 16 · Final Stop</div>
         <div class="stop-title">Town of Miller Town Hall</div>
@@ -777,7 +704,6 @@
   </div>
 
   <script>
-    // Stops in display order — id matches data-stop index (0-based)
     const stops = [
       { id: 0,  name: "South Shore Miller Station",       coords: [-87.26758, 41.5974318133306], zoom: 16 },
       { id: 1,  name: "6th Ave Business District",        coords: [-87.2677, 41.6005], zoom: 16 },
@@ -900,19 +826,6 @@
       });
 
     window.addEventListener('resize', scroller.resize);
-
-    // Force map to resize on mobile after load
-    setTimeout(() => { map.resize(); }, 500);
-
-    // Also resize when page becomes visible (fixes mobile rendering)
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) { map.resize(); }
-    });
-
-    // Resize on orientation change
-    window.addEventListener('orientationchange', () => {
-      setTimeout(() => { map.resize(); }, 300);
-    });
   </script>
 
 </body>
